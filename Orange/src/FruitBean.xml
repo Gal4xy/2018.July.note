@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    <bean id="fruitPerson" class="iOC.FruitPerson">
+       <property name="apple" ref="greenapple"></property>
+    </bean>
+      <bean id="yellowapple" class="AppleFactory.YellowApple"> </bean>
+    <bean id="greenapple" class="AppleFactory.GreenApple"></bean>
+    <bean class="applicationEvent.OrangeEventListener"></bean>
+    <bean id="publisher" class="applicationEvent.OrangeEventPublisher"></bean>
+    <bean id="show" class="iOC.showItem">
+       <constructor-arg value="banana"></constructor-arg>
+       <constructor-arg value="fruit"></constructor-arg>
+       <constructor-arg value="sweet"></constructor-arg>
+    </bean>
+</beans>
